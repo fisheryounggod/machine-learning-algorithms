@@ -1,14 +1,17 @@
 # 0种机器学习算法（附Python代码）
 
 # 转载roger_royer 最后发布于2018-01-15 11:20:34 阅读数 11432  收藏
-1. sklearn python API
+#%%
+import numpy as np
+x=np.random.rand(10)
+y=np.random.randn(10)
 
 #%% LinearRegression
 from sklearn.linear_model import LinearRegression         # 线性回归 #
 module = LinearRegression()
 module.fit(x, y)
-module.score(x, y)
-module.predict(test)
+# module.score(x, y)
+# module.predict(test)
 
 
 #%% LogisticRegression
@@ -20,8 +23,6 @@ module.predict(test)
 
 
 
-
-
 #%% KNN
 from sklearn.neighbors import KNeighborsClassifier     #K近邻#
 from sklearn.neighbors import KNeighborsRegressor
@@ -29,7 +30,6 @@ module = KNeighborsClassifier(n_neighbors=6)
 module.fit(x, y)
 predicted = module.predict(test)
 predicted = module.predict_proba(test)
-
 
 
 #%% SVM
@@ -48,8 +48,6 @@ module.fit(x, y)
 predicted = module.predict(test)
 
 
-
-
 #%% DecisionTree
 from sklearn import tree                              #决策树分类器#
 module = tree.DecisionTreeClassifier(criterion='gini')
@@ -58,16 +56,11 @@ module.score(x, y)
 module.predict(test)
 
 
-
-
-
 #%% K-Means
 from sklearn.cluster import KMeans                    #kmeans聚类#
 module = KMeans(n_clusters=3, random_state=0)
 module.fit(x, y)
 module.predict(test)
-
-
 
 
 #%% RandomForest
@@ -78,18 +71,12 @@ module.fit(x, y)
 module.predict(test)
 
 
-
-
-
 #%% GBDT
 from sklearn.ensemble import GradientBoostingClassifier      #Gradient Boosting 和 AdaBoost算法#
 from sklearn.ensemble import GradientBoostingRegressor
 module = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=1, random_state=0)
 module.fit(x, y)
 module.predict(test)
-
-
-
 
 
 #%% PCA
